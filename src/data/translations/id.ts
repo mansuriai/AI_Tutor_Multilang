@@ -369,12 +369,12 @@ export const idTranslations = {
 
   // Subscription Plans
   'subscription.basic': 'Dasar',
-  'subscription.pro': 'Pro',
+  'subscription.pro': 'Standar',
   'subscription.premium': 'Premium',
   'subscription.monthly': 'Bulanan',
   'subscription.yearly': 'Tahunan',
   'subscription.save': 'Hemat',
-  'subscription.mostPopular': 'Paling Populer',
+  'subscription.mostPopular': 'PALING POPULER',
   'subscription.bestValue': 'Nilai Terbaik',
   'subscription.features': 'Fitur',
   'subscription.unlimitedAccess': 'Akses Tak Terbatas',
@@ -384,10 +384,35 @@ export const idTranslations = {
   'subscription.progressTracking': 'Pelacakan Kemajuan',
   'subscription.communityAccess': 'Akses Komunitas',
   'subscription.prioritySupport': 'Dukungan Prioritas',
-  'subscription.customLearningPath': 'Jalur Belajar Kustom',
-  'subscription.advancedAnalytics': 'Analitik Lanjutan',
+  'subscription.customLearningPath': 'Pembuatan jalur pembelajaran khusus',
+  'subscription.advancedAnalytics': 'Dasbor analitik lanjutan',
   'subscription.selectPlan': 'Pilih Paket',
   'subscription.currentPlan': 'Paket Saat Ini',
+  'subscription.basicDesc': 'Sempurna untuk pemula dan pelajar santai',
+  'subscription.proDesc': 'Paket paling populer untuk siswa berdedikasi',
+  'subscription.premiumDesc': 'Untuk siswa serius yang membutuhkan dukungan komprehensif',
+  'subscription.feature.textAiTutoring': 'Bimbingan AI berbasis teks 24/7',
+  'subscription.feature.basicQuizzes': 'Akses ke kuis dasar',
+  'subscription.feature.communityForum': 'Akses forum komunitas',
+  'subscription.feature.fiveSubjects': '5 mata pelajaran termasuk',
+  'subscription.feature.weeklyReports': 'Laporan kemajuan mingguan',
+  'subscription.feature.everythingBasic': 'Semua dalam Dasar',
+  'subscription.feature.videoTutoring10h': 'Bimbingan video (10 jam/bulan)',
+  'subscription.feature.advancedQuizzes': 'Kuis dan tes lanjutan',
+  'subscription.feature.unlimitedSubjects': 'Mata pelajaran tak terbatas',
+  'subscription.feature.dailyTracking': 'Pelacakan kemajuan harian',
+  'subscription.feature.prioritySupport': 'Dukungan prioritas',
+  'subscription.feature.everythingPro': 'Semua dalam Standar',
+  'subscription.feature.unlimitedVideoTutoring': 'Bimbingan video tak terbatas',
+  'subscription.feature.customLearningPath': 'Pembuatan jalur pembelajaran khusus',
+  'subscription.feature.humanTutorSession': 'Sesi tutor manusia bulanan 1-on-1',
+  'subscription.feature.curriculumDesign': 'Desain kurikulum personal',
+  'subscription.feature.advancedAnalytics': 'Dasbor analitik lanjutan',
+  'subscription.feature.certificate': 'Sertifikat penyelesaian',
+  'subscription.getStarted': 'Mulai',
+  'subscription.subscribeNow': 'Langganan Sekarang',
+  'subscription.goPremium': 'Jadi Premium',
+  'subscription.month': 'bulan',
 
   // Vapi Widget
   'vapi.startPracticeCaseStudy': '🎤 Mulai Latihan Studi Kasus',
@@ -603,4 +628,9 @@ export const idTranslations = {
 
   // Language Codes
   'common.languageCode': 'id',
+
+  // New dashboard subjects
+  'dashboard.subjects.philosophy': 'Filsafat',
+  'dashboard.subjects.musicTheory': 'Teori Musik',
+  'dashboard.subjects.drawingIllustration': 'Menggambar & Ilustrasi',
 };

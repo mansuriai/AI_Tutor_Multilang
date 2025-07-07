@@ -369,7 +369,7 @@ export const arTranslations = {
 
   // Subscription Plans
   'subscription.basic': 'أساسي',
-  'subscription.pro': 'احترافي',
+  'subscription.pro': 'قياسي',
   'subscription.premium': 'مميز',
   'subscription.monthly': 'شهري',
   'subscription.yearly': 'سنوي',
@@ -603,4 +603,36 @@ export const arTranslations = {
 
   // Language Codes
   'common.languageCode': 'ar',
+
+  // New Dashboard Subjects
+  'dashboard.subjects.philosophy': 'الفلسفة',
+  'dashboard.subjects.musicTheory': 'نظرية الموسيقى',
+  'dashboard.subjects.drawingIllustration': 'الرسم والتوضيح',
+
+  // New Subscription Plan Features
+  'subscription.basicDesc': 'مثالي للمبتدئين والمتعلمين العاديين',
+  'subscription.proDesc': 'خطة الأكثر شعبية للطلاب الملتزمين',
+  'subscription.premiumDesc': 'للطلاب الجادين الذين يحتاجون إلى دعم شامل',
+  'subscription.feature.textAiTutoring': 'دروس الذكاء الاصطناعي النصية على مدار الساعة',
+  'subscription.feature.basicQuizzes': 'الوصول إلى الاختبارات الأساسية',
+  'subscription.feature.communityForum': 'الوصول إلى منتدى المجتمع',
+  'subscription.feature.fiveSubjects': '5 مواد مشمولة',
+  'subscription.feature.weeklyReports': 'تقارير التقدم الأسبوعية',
+  'subscription.feature.everythingBasic': 'كل شيء في الأساسي',
+  'subscription.feature.videoTutoring10h': 'دروس فيديو (10 ساعات/شهر)',
+  'subscription.feature.advancedQuizzes': 'اختبارات متقدمة',
+  'subscription.feature.unlimitedSubjects': 'مواد غير محدودة',
+  'subscription.feature.dailyTracking': 'تتبع يومي للتقدم',
+  'subscription.feature.prioritySupport': 'دعم أولوية',
+  'subscription.feature.everythingPro': 'كل شيء في القياسي',
+  'subscription.feature.unlimitedVideoTutoring': 'دروس فيديو غير محدودة',
+  'subscription.feature.customLearningPath': 'إنشاء مسار تعلم مخصص',
+  'subscription.feature.humanTutorSession': 'جلسة مع مدرس بشري شهريًا',
+  'subscription.feature.curriculumDesign': 'تصميم منهج شخصي',
+  'subscription.feature.advancedAnalytics': 'لوحة تحكم تحليلات متقدمة',
+  'subscription.feature.certificate': 'شهادة إتمام',
+  'subscription.getStarted': 'ابدأ الآن',
+  'subscription.subscribeNow': 'اشترك الآن',
+  'subscription.goPremium': 'احصل على المميز',
+  'subscription.month': 'شهر',
 };

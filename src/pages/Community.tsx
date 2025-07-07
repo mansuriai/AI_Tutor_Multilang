@@ -157,7 +157,29 @@ const Community = () => {
 
   const availableSubjects = selectedGrade === "all" 
     ? [...new Set(posts.map(post => post.subjectKey))]
-    : getSubjectsForGrade(selectedGrade);
+    : getSubjectsForGrade(selectedGrade).map(name => {
+        // Map display name to translation key
+        const nameToKey: Record<string, string> = {
+          'Mathematics': 'community.subjects.mathematics',
+          'English': 'community.subjects.english',
+          'Science': 'community.subjects.science',
+          'Social Studies': 'community.subjects.socialStudies',
+          'Art': 'community.subjects.art',
+          'History': 'community.subjects.history',
+          'Geography': 'community.subjects.geography',
+          'Physical Education': 'community.subjects.physicalEducation',
+          'Algebra': 'community.subjects.algebra',
+          'Geometry': 'community.subjects.geometry',
+          'Calculus': 'community.subjects.calculus',
+          'Biology': 'community.subjects.biology',
+          'Chemistry': 'community.subjects.chemistry',
+          'Physics': 'community.subjects.physics',
+          'English Literature': 'community.subjects.englishLiterature',
+          'World History': 'community.subjects.worldHistory',
+          'Computer Science': 'community.subjects.computerScience',
+        };
+        return nameToKey[name] || name;
+      });
 
   return (
     <div className="min-h-screen flex flex-col">

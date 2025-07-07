@@ -52,6 +52,9 @@ const Dashboard = () => {
       'English Literature': 'dashboard.subjects.englishLiterature',
       'World History': 'dashboard.subjects.worldHistory',
       'Computer Science': 'dashboard.subjects.computerScience',
+      'Philosophy': 'dashboard.subjects.philosophy',
+      'Music Theory': 'dashboard.subjects.musicTheory',
+      'Drawing & Illustration': 'dashboard.subjects.drawingIllustration',
     };
     
     return subjectKeyMap[studyStats.subjectName] || studyStats.subjectName;

@@ -56,7 +56,7 @@ const PostCreator = ({ availableSubjects }: PostCreatorProps) => {
                   </SelectTrigger>
                   <SelectContent>
                     {availableSubjects.map((subject) => (
-                      <SelectItem key={subject} value={subject.toLowerCase()}>{subject}</SelectItem>
+                      <SelectItem key={subject} value={subject}>{t(subject)}</SelectItem>
                     ))}
                   </SelectContent>
                 </Select>

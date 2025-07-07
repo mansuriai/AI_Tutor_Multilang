@@ -1,61 +1,62 @@
-
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "sonner";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const plans = [
   {
     id: "basic",
-    name: "Basic",
+    nameKey: "subscription.basic",
     price: "$40",
-    description: "Perfect for beginners and casual learners",
+    descriptionKey: "subscription.basicDesc",
     features: [
-      "24/7 text-based AI tutoring",
-      "Access to basic quizzes",
-      "Community forum access",
-      "5 subjects included",
-      "Weekly progress reports",
+      "subscription.feature.textAiTutoring",
+      "subscription.feature.basicQuizzes",
+      "subscription.feature.communityForum",
+      "subscription.feature.fiveSubjects",
+      "subscription.feature.weeklyReports",
     ],
     popular: false,
-    buttonText: "Get Started"
+    buttonKey: "subscription.getStarted"
   },
   {
     id: "standard",
-    name: "Standard",
+    nameKey: "subscription.pro",
     price: "$100",
-    description: "Our most popular plan for dedicated students",
+    descriptionKey: "subscription.proDesc",
     features: [
-      "Everything in Basic",
-      "Video tutoring (10 hours/month)",
-      "Advanced quizzes and tests",
-      "Unlimited subjects",
-      "Daily progress tracking",
-      "Priority support",
+      "subscription.feature.everythingBasic",
+      "subscription.feature.videoTutoring10h",
+      "subscription.feature.advancedQuizzes",
+      "subscription.feature.unlimitedSubjects",
+      "subscription.feature.dailyTracking",
+      "subscription.feature.prioritySupport",
     ],
     popular: true,
-    buttonText: "Subscribe Now"
+    buttonKey: "subscription.subscribeNow"
   },
   {
     id: "premium",
-    name: "Premium",
+    nameKey: "subscription.premium",
     price: "$200",
-    description: "For serious students who need comprehensive support",
+    descriptionKey: "subscription.premiumDesc",
     features: [
-      "Everything in Standard",
-      "Unlimited video tutoring",
-      "Custom learning path creation",
-      "1-on-1 monthly human tutor session",
-      "Personalized curriculum design",
-      "Advanced analytics dashboard",
-      "Certificate of completion",
+      "subscription.feature.everythingPro",
+      "subscription.feature.unlimitedVideoTutoring",
+      "subscription.feature.customLearningPath",
+      "subscription.feature.humanTutorSession",
+      "subscription.feature.curriculumDesign",
+      "subscription.feature.advancedAnalytics",
+      "subscription.feature.certificate",
     ],
     popular: false,
-    buttonText: "Go Premium"
+    buttonKey: "subscription.goPremium"
   },
 ];
 
 const SubscriptionPlans = () => {
+  const { t } = useLanguage();
   const handleSubscribe = (planId: string) => {
     toast.success(`You selected the ${planId.charAt(0).toUpperCase() + planId.slice(1)} plan! Please connect Supabase to enable subscriptions.`, {
       description: "This would typically redirect to a payment page.",
@@ -74,24 +75,24 @@ const SubscriptionPlans = () => {
           {plan.popular && (
             <div className="absolute -top-4 left-0 right-0 flex justify-center">
               <span className="bg-tutor-primary text-white text-xs font-semibold py-1 px-4 rounded-full">
-                MOST POPULAR
+                {t('subscription.mostPopular')}
               </span>
             </div>
           )}
           <CardHeader className="pb-2">
-            <CardTitle className="text-2xl">{plan.name}</CardTitle>
+            <CardTitle className="text-2xl">{t(plan.nameKey)}</CardTitle>
             <div>
               <span className="text-3xl font-bold">{plan.price}</span>
-              <span className="text-muted-foreground"> / month</span>
+              <span className="text-muted-foreground"> / {t('subscription.month')}</span>
             </div>
-            <CardDescription className="mt-2">{plan.description}</CardDescription>
+            <CardDescription className="mt-2">{t(plan.descriptionKey)}</CardDescription>
           </CardHeader>
           <CardContent className="flex-grow">
             <ul className="space-y-2">
               {plan.features.map((feature, i) => (
                 <li key={i} className="flex items-start">
                   <Check size={18} className="text-tutor-primary mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm">{feature}</span>
+                  <span className="text-sm">{t(feature)}</span>
                 </li>
               ))}
             </ul>
@@ -101,7 +102,7 @@ const SubscriptionPlans = () => {
               className={`w-full ${plan.popular ? "bg-tutor-primary hover:bg-tutor-primary/90" : ""}`}
               onClick={() => handleSubscribe(plan.id)}
             >
-              {plan.buttonText}
+              {t(plan.buttonKey)}
             </Button>
           </CardFooter>
         </Card>

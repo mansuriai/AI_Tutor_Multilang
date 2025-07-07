@@ -68,7 +68,7 @@ const OverviewTab = ({
   const translateUpcomingLessons = (lessons: any[]) => {
     return lessons.map(lesson => ({
       ...lesson,
-      subject: lesson.subjectKey ? t(lesson.subjectKey) : lesson.subject
+      subject: lesson.subjectKey ? t(lesson.subjectKey) : lesson.subjectKey
     }));
   };
 
