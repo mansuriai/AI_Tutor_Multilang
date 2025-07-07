@@ -542,4 +542,65 @@ export const idTranslations = {
   'community.followedByQuestion': 'diikuti dengan pertanyaan Anda',
   'community.getInstantHelp': 'Dapatkan penjelasan dan bantuan instan',
   'community.aiProvidesGuidance': 'AI memberikan panduan yang sesuai dengan kelas',
+
+  // Weekdays
+  'common.weekdays.mon': 'Sen',
+  'common.weekdays.tue': 'Sel',
+  'common.weekdays.wed': 'Rab',
+  'common.weekdays.thu': 'Kam',
+  'common.weekdays.fri': 'Jum',
+  'common.weekdays.sat': 'Sab',
+  'common.weekdays.sun': 'Min',
+
+  // Months
+  'common.months.jan': 'Jan',
+  'common.months.feb': 'Feb',
+  'common.months.mar': 'Mar',
+  'common.months.apr': 'Apr',
+  'common.months.may': 'Mei',
+  'common.months.jun': 'Jun',
+  'common.months.jul': 'Jul',
+  'common.months.aug': 'Ags',
+  'common.months.sep': 'Sep',
+  'common.months.oct': 'Okt',
+  'common.months.nov': 'Nov',
+  'common.months.dec': 'Des',
+
+  // Grade Selector
+  'community.chooseGrade': 'Pilih kelas',
+  'community.grade': 'Kelas {{grade}}',
+
+  // Post Creator
+  'community.shareQuestion': 'Bagikan pertanyaan, sumber daya, atau pencapaian dengan komunitas kelas Anda...',
+  'community.gradePlaceholder': 'Kelas',
+  'community.subjectPlaceholder': 'Mata Pelajaran',
+  'community.postButton': 'Posting',
+
+  // Dashboard Subjects
+  'dashboard.subjects.finance': 'Keuangan',
+  'dashboard.subjects.mathematics': 'Matematika',
+  'dashboard.subjects.science': 'Ilmu Pengetahuan',
+  'dashboard.subjects.english': 'Bahasa Inggris',
+  'dashboard.subjects.history': 'Sejarah',
+  'dashboard.subjects.geography': 'Geografi',
+  'dashboard.subjects.art': 'Seni',
+  'dashboard.subjects.physicalEducation': 'Pendidikan Jasmani',
+  'dashboard.subjects.algebra': 'Aljabar',
+  'dashboard.subjects.geometry': 'Geometri',
+  'dashboard.subjects.calculus': 'Kalkulus',
+  'dashboard.subjects.biology': 'Biologi',
+  'dashboard.subjects.chemistry': 'Kimia',
+  'dashboard.subjects.physics': 'Fisika',
+  'dashboard.subjects.englishLiterature': 'Sastra Inggris',
+  'dashboard.subjects.worldHistory': 'Sejarah Dunia',
+  'dashboard.subjects.computerScience': 'Ilmu Komputer',
+
+  // Dashboard Actions
+  'dashboard.joinLesson': 'Bergabung dengan Pelajaran',
+
+  // Community Subjects
+  'community.subjects': 'Mata Pelajaran',
+
+  // Language Codes
+  'common.languageCode': 'id',
 };

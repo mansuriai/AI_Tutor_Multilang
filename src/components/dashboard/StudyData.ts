@@ -1,12 +1,12 @@
-// Weekly progress data (Finance)
+// Weekly progress data (Finance) - using translation keys
 export const weeklyProgressData = [
-  { name: "Mon", score: 70, average: 60 },
-  { name: "Tue", score: 75, average: 62 },
-  { name: "Wed", score: 80, average: 65 },
-  { name: "Thu", score: 85, average: 68 },
-  { name: "Fri", score: 90, average: 70 },
-  { name: "Sat", score: 88, average: 72 },
-  { name: "Sun", score: 92, average: 75 },
+  { nameKey: "common.weekdays.mon", score: 70, average: 60 },
+  { nameKey: "common.weekdays.tue", score: 75, average: 62 },
+  { nameKey: "common.weekdays.wed", score: 80, average: 65 },
+  { nameKey: "common.weekdays.thu", score: 85, average: 68 },
+  { nameKey: "common.weekdays.fri", score: 90, average: 70 },
+  { nameKey: "common.weekdays.sat", score: 88, average: 72 },
+  { nameKey: "common.weekdays.sun", score: 92, average: 75 },
 ];
 
 // Quiz performance data (Finance) - using translation keys
@@ -41,19 +41,19 @@ export const quizPerformanceData = [
 export const upcomingLessons = [
   { 
     titleKey: "dashboard.lesson.introManagerialFinance", 
-    subject: "Finance", 
+    subjectKey: "dashboard.subjects.finance", 
     dateKey: "dashboard.todayAt",
     dateParams: { time: "2:00 PM" }
   },
   { 
     titleKey: "dashboard.lesson.financialStatements", 
-    subject: "Finance", 
+    subjectKey: "dashboard.subjects.finance", 
     dateKey: "dashboard.tomorrowAt",
     dateParams: { time: "10:00 AM" }
   },
   { 
     titleKey: "dashboard.lesson.valuationSecurities", 
-    subject: "Finance", 
+    subjectKey: "dashboard.subjects.finance", 
     dateKey: "dashboard.dateAt",
     dateParams: { date: "May 14", time: "3:30 PM" }
   },

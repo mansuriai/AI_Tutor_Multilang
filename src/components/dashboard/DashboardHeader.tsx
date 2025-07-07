@@ -1,4 +1,3 @@
-
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useAiTutor } from "@/contexts/AiTutorContext";
@@ -8,12 +7,16 @@ import { MessageCircle, BookOpen, FileText } from "lucide-react";
 interface DashboardHeaderProps {
   selectedSubject: string | null;
   subjectName: string;
+  subjectKey?: string;
 }
 
-const DashboardHeader = ({ selectedSubject, subjectName }: DashboardHeaderProps) => {
+const DashboardHeader = ({ selectedSubject, subjectName, subjectKey }: DashboardHeaderProps) => {
   const navigate = useNavigate();
   const { setIsSheetOpen } = useAiTutor();
   const { t } = useLanguage();
+  
+  // Get translated subject name
+  const translatedSubjectName = subjectKey ? t(subjectKey) : subjectName;
   
   return (
     <div className="bg-white border-b pt-8 pb-6">
@@ -23,7 +26,7 @@ const DashboardHeader = ({ selectedSubject, subjectName }: DashboardHeaderProps)
             <h1 className="text-3xl font-bold">{t('dashboard.title')}</h1>
             <p className="text-muted-foreground">
               {selectedSubject 
-                ? `${t('dashboard.currentlyStudying')} ${subjectName}`
+                ? `${t('dashboard.currentlyStudying')} ${translatedSubjectName}`
                 : t('dashboard.subtitle')}
             </p>
           </div>

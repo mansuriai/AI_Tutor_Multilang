@@ -137,10 +137,10 @@ const Community = () => {
 
   const filteredPosts = posts.filter(post => {
     const matchesGrade = selectedGrade === "all" || post.grade === selectedGrade;
-    const matchesSubject = !selectedSubject || post.subject.toLowerCase() === selectedSubject.toLowerCase();
+    const matchesSubject = !selectedSubject || post.subjectKey === selectedSubject;
     const matchesSearch = post.content.toLowerCase().includes(searchQuery.toLowerCase()) || 
                           t(post.author.nameKey).toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          post.subject.toLowerCase().includes(searchQuery.toLowerCase());
+                          t(post.subjectKey).toLowerCase().includes(searchQuery.toLowerCase());
     return matchesGrade && matchesSubject && matchesSearch;
   });
 
@@ -218,7 +218,7 @@ const Community = () => {
                   )}
                   {selectedSubject && (
                     <span className="bg-green-100 text-green-800 px-2 py-1 rounded-md text-sm">
-                      {selectedSubject}
+                      {t(selectedSubject)}
                     </span>
                   )}
                 </div>

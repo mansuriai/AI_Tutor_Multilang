@@ -542,4 +542,65 @@ export const arTranslations = {
   'community.followedByQuestion': 'متبوعاً بسؤالك',
   'community.getInstantHelp': 'احصل على توضيحات ومساعدة فورية',
   'community.aiProvidesGuidance': 'الذكاء الاصطناعي يوفر إرشادات مناسبة للصف',
+
+  // Weekdays
+  'common.weekdays.mon': 'الاثنين',
+  'common.weekdays.tue': 'الثلاثاء',
+  'common.weekdays.wed': 'الأربعاء',
+  'common.weekdays.thu': 'الخميس',
+  'common.weekdays.fri': 'الجمعة',
+  'common.weekdays.sat': 'السبت',
+  'common.weekdays.sun': 'الأحد',
+
+  // Months
+  'common.months.jan': 'ينا',
+  'common.months.feb': 'فبر',
+  'common.months.mar': 'مار',
+  'common.months.apr': 'أبر',
+  'common.months.may': 'مايو',
+  'common.months.jun': 'يون',
+  'common.months.jul': 'يول',
+  'common.months.aug': 'أغس',
+  'common.months.sep': 'سبت',
+  'common.months.oct': 'أكت',
+  'common.months.nov': 'نوف',
+  'common.months.dec': 'ديس',
+
+  // Grade Selector
+  'community.chooseGrade': 'اختر الصف',
+  'community.grade': 'الصف {{grade}}',
+
+  // Post Creator
+  'community.shareQuestion': 'شارك سؤالاً أو مورداً أو إنجازاً مع مجتمع صفك...',
+  'community.gradePlaceholder': 'الصف',
+  'community.subjectPlaceholder': 'المادة',
+  'community.postButton': 'نشر',
+
+  // Dashboard Subjects
+  'dashboard.subjects.finance': 'التمويل',
+  'dashboard.subjects.mathematics': 'الرياضيات',
+  'dashboard.subjects.science': 'العلوم',
+  'dashboard.subjects.english': 'الإنجليزية',
+  'dashboard.subjects.history': 'التاريخ',
+  'dashboard.subjects.geography': 'الجغرافيا',
+  'dashboard.subjects.art': 'الفن',
+  'dashboard.subjects.physicalEducation': 'التربية البدنية',
+  'dashboard.subjects.algebra': 'الجبر',
+  'dashboard.subjects.geometry': 'الهندسة',
+  'dashboard.subjects.calculus': 'التفاضل',
+  'dashboard.subjects.biology': 'الأحياء',
+  'dashboard.subjects.chemistry': 'الكيمياء',
+  'dashboard.subjects.physics': 'الفيزياء',
+  'dashboard.subjects.englishLiterature': 'الأدب الإنجليزي',
+  'dashboard.subjects.worldHistory': 'تاريخ العالم',
+  'dashboard.subjects.computerScience': 'علوم الحاسوب',
+
+  // Dashboard Actions
+  'dashboard.joinLesson': 'انضم إلى الدرس',
+
+  // Community Subjects
+  'community.subjects': 'المواد',
+
+  // Language Codes
+  'common.languageCode': 'ar',
 };

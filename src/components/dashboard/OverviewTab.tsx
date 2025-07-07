@@ -46,27 +46,30 @@ const OverviewTab = ({
 
   // Helper function to translate quiz data
   const translateQuizData = (quizData: any[]) => {
-    return quizData.map((quiz, index) => {
+    return quizData.map(quiz => {
       const title = t(quiz.nameParams.title);
       const name = t(quiz.nameKey).replace('{{num}}', quiz.nameParams.num).replace('{{title}}', title);
-      
-      // Debug logging for the 3rd quiz
-      if (index === 2) {
-        console.log('3rd Quiz Debug:', {
-          original: quiz,
-          titleKey: quiz.nameParams.title,
-          translatedTitle: title,
-          nameKey: quiz.nameKey,
-          translatedName: name,
-          finalName: name
-        });
-      }
-      
       return {
         ...quiz,
         name
       };
     });
+  };
+
+  // Helper function to translate weekly progress data
+  const translateWeeklyData = (weeklyData: any[]) => {
+    return weeklyData.map(day => ({
+      ...day,
+      name: t(day.nameKey)
+    }));
+  };
+
+  // Helper function to translate upcoming lessons
+  const translateUpcomingLessons = (lessons: any[]) => {
+    return lessons.map(lesson => ({
+      ...lesson,
+      subject: lesson.subjectKey ? t(lesson.subjectKey) : lesson.subject
+    }));
   };
 
   // Helper function to translate time strings
@@ -109,9 +112,9 @@ const OverviewTab = ({
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
       <div className="lg:col-span-2 space-y-6">
-        {/* Weekly Progress Chart */}
+        {/* Weekly Progress */}
         <ProgressChart 
-          data={weeklyProgressData} 
+          data={translateWeeklyData(weeklyProgressData)} 
           title={t('dashboard.weeklyProgress')}
           description={t('dashboard.weeklyProgressDesc')}
         />
@@ -120,7 +123,6 @@ const OverviewTab = ({
         <ProgressChart 
           data={(() => {
             const translatedData = translateQuizData(quizPerformanceData);
-            console.log('Final Quiz Data for Chart:', translatedData);
             return translatedData;
           })()} 
           title={t('dashboard.recentQuizPerformance')}
@@ -164,34 +166,27 @@ const OverviewTab = ({
       <div className="space-y-6">
         {/* Upcoming Lessons */}
         <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-lg">{t('dashboard.upcomingLessons')}</CardTitle>
+          <CardHeader>
+            <CardTitle>{t('dashboard.upcomingLessons')}</CardTitle>
             <CardDescription>{t('dashboard.upcomingLessonsDesc')}</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              {upcomingLessons.map((lesson, i) => (
-                <div key={i} className="flex items-center justify-between">
-                  <div>
-                    <p className="font-medium">{t(lesson.titleKey)}</p>
+              {translateUpcomingLessons(upcomingLessons).map((lesson, index) => (
+                <div key={index} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                  <div className="flex-1">
+                    <h4 className="font-medium">{t(lesson.titleKey)}</h4>
                     <p className="text-sm text-muted-foreground">{lesson.subject}</p>
                     <p className="text-xs text-muted-foreground">
                       {translateDate(lesson.dateKey, lesson.dateParams)}
                     </p>
                   </div>
-                  <Button variant="ghost" size="icon" className="shrink-0">
-                    <ChevronRight size={18} />
+                  <Button variant="outline" size="sm">
+                    {t('dashboard.joinLesson')}
                   </Button>
                 </div>
               ))}
             </div>
-            <Button 
-              className="w-full mt-4" 
-              variant="outline"
-              onClick={() => navigate("/lessons")}
-            >
-              {t('dashboard.viewAllLessons')}
-            </Button>
           </CardContent>
         </Card>
         

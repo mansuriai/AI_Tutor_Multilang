@@ -1,7 +1,7 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Users } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface SubjectFilterProps {
   selectedGrade: string;
@@ -11,6 +11,8 @@ interface SubjectFilterProps {
 }
 
 const SubjectFilter = ({ selectedGrade, selectedSubject, availableSubjects, onSubjectChange }: SubjectFilterProps) => {
+  const { t } = useLanguage();
+  
   if (selectedGrade === "all") return null;
 
   return (
@@ -18,7 +20,7 @@ const SubjectFilter = ({ selectedGrade, selectedSubject, availableSubjects, onSu
       <CardHeader className="pb-2">
         <CardTitle className="text-lg flex items-center">
           <Users size={18} className="mr-2" />
-          Grade {selectedGrade} Subjects
+          {t('community.gradeLabel').replace('{{grade}}', selectedGrade)} {t('community.subjects')}
         </CardTitle>
       </CardHeader>
       <CardContent>
@@ -28,16 +30,16 @@ const SubjectFilter = ({ selectedGrade, selectedSubject, availableSubjects, onSu
             className="justify-start w-full text-sm"
             onClick={() => onSubjectChange("")}
           >
-            All Subjects
+            {t('community.allSubjects')}
           </Button>
-          {availableSubjects.map((subject) => (
+          {availableSubjects.map((subjectKey) => (
             <Button 
-              key={subject} 
-              variant={selectedSubject === subject ? "default" : "ghost"} 
+              key={subjectKey} 
+              variant={selectedSubject === subjectKey ? "default" : "ghost"} 
               className="justify-start w-full text-sm"
-              onClick={() => onSubjectChange(subject)}
+              onClick={() => onSubjectChange(subjectKey)}
             >
-              {subject}
+              {t(subjectKey)}
             </Button>
           ))}
         </div>

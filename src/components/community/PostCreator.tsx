@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -6,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Send } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface PostCreatorProps {
   availableSubjects: string[];
@@ -13,6 +13,7 @@ interface PostCreatorProps {
 
 const PostCreator = ({ availableSubjects }: PostCreatorProps) => {
   const [newPostContent, setNewPostContent] = useState("");
+  const { t } = useLanguage();
 
   const handlePostSubmit = () => {
     if (newPostContent.trim()) {
@@ -30,7 +31,7 @@ const PostCreator = ({ availableSubjects }: PostCreatorProps) => {
           </Avatar>
           <div className="flex-1">
             <Textarea 
-              placeholder="Share a question, resource or achievement with your grade community..." 
+              placeholder={t('community.shareQuestion')}
               className="mb-2 resize-none"
               value={newPostContent}
               onChange={(e) => setNewPostContent(e.target.value)}
@@ -39,17 +40,19 @@ const PostCreator = ({ availableSubjects }: PostCreatorProps) => {
               <div className="flex gap-2">
                 <Select>
                   <SelectTrigger className="w-32">
-                    <SelectValue placeholder="Grade" />
+                    <SelectValue placeholder={t('community.gradePlaceholder')} />
                   </SelectTrigger>
                   <SelectContent>
                     {Array.from({length: 12}, (_, i) => i + 1).map((grade) => (
-                      <SelectItem key={grade} value={grade.toString()}>Grade {grade}</SelectItem>
+                      <SelectItem key={grade} value={grade.toString()}>
+                        {t('community.grade').replace('{{grade}}', grade.toString())}
+                      </SelectItem>
                     ))}
                   </SelectContent>
                 </Select>
                 <Select>
                   <SelectTrigger className="w-40">
-                    <SelectValue placeholder="Subject" />
+                    <SelectValue placeholder={t('community.subjectPlaceholder')} />
                   </SelectTrigger>
                   <SelectContent>
                     {availableSubjects.map((subject) => (
@@ -62,7 +65,7 @@ const PostCreator = ({ availableSubjects }: PostCreatorProps) => {
                 onClick={handlePostSubmit}
                 disabled={!newPostContent.trim()}
               >
-                <Send size={16} className="mr-2" /> Post
+                <Send size={16} className="mr-2" /> {t('community.postButton')}
               </Button>
             </div>
           </div>

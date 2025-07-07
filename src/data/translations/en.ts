@@ -542,4 +542,65 @@ export const enTranslations = {
   'community.followedByQuestion': 'followed by your question',
   'community.getInstantHelp': 'Get instant explanations and help',
   'community.aiProvidesGuidance': 'AI provides grade-appropriate guidance',
+
+  // Weekdays
+  'common.weekdays.mon': 'Mon',
+  'common.weekdays.tue': 'Tue',
+  'common.weekdays.wed': 'Wed',
+  'common.weekdays.thu': 'Thu',
+  'common.weekdays.fri': 'Fri',
+  'common.weekdays.sat': 'Sat',
+  'common.weekdays.sun': 'Sun',
+
+  // Months
+  'common.months.jan': 'Jan',
+  'common.months.feb': 'Feb',
+  'common.months.mar': 'Mar',
+  'common.months.apr': 'Apr',
+  'common.months.may': 'May',
+  'common.months.jun': 'Jun',
+  'common.months.jul': 'Jul',
+  'common.months.aug': 'Aug',
+  'common.months.sep': 'Sep',
+  'common.months.oct': 'Oct',
+  'common.months.nov': 'Nov',
+  'common.months.dec': 'Dec',
+
+  // Grade Selector
+  'community.chooseGrade': 'Choose grade',
+  'community.grade': 'Grade {{grade}}',
+
+  // Post Creator
+  'community.shareQuestion': 'Share a question, resource or achievement with your grade community...',
+  'community.gradePlaceholder': 'Grade',
+  'community.subjectPlaceholder': 'Subject',
+  'community.postButton': 'Post',
+
+  // Dashboard Subjects
+  'dashboard.subjects.finance': 'Finance',
+  'dashboard.subjects.mathematics': 'Mathematics',
+  'dashboard.subjects.science': 'Science',
+  'dashboard.subjects.english': 'English',
+  'dashboard.subjects.history': 'History',
+  'dashboard.subjects.geography': 'Geography',
+  'dashboard.subjects.art': 'Art',
+  'dashboard.subjects.physicalEducation': 'Physical Education',
+  'dashboard.subjects.algebra': 'Algebra',
+  'dashboard.subjects.geometry': 'Geometry',
+  'dashboard.subjects.calculus': 'Calculus',
+  'dashboard.subjects.biology': 'Biology',
+  'dashboard.subjects.chemistry': 'Chemistry',
+  'dashboard.subjects.physics': 'Physics',
+  'dashboard.subjects.englishLiterature': 'English Literature',
+  'dashboard.subjects.worldHistory': 'World History',
+  'dashboard.subjects.computerScience': 'Computer Science',
+
+  // Dashboard Actions
+  'dashboard.joinLesson': 'Join Lesson',
+
+  // Community Subjects
+  'community.subjects': 'Subjects',
+
+  // Language Codes
+  'common.languageCode': 'en',
 };

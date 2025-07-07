@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import MainLayout from "@/components/layouts/MainLayout";
@@ -33,6 +32,35 @@ const Dashboard = () => {
     setSubjectName(studyStats.subjectName);
   }, [studyStats.subjectName, setSubjectName]);
 
+  // Get translated subject name for display
+  const getTranslatedSubjectName = () => {
+    const subjectKeyMap: Record<string, string> = {
+      'Finance': 'dashboard.subjects.finance',
+      'Mathematics': 'dashboard.subjects.mathematics',
+      'Science': 'dashboard.subjects.science',
+      'English': 'dashboard.subjects.english',
+      'History': 'dashboard.subjects.history',
+      'Geography': 'dashboard.subjects.geography',
+      'Art': 'dashboard.subjects.art',
+      'Physical Education': 'dashboard.subjects.physicalEducation',
+      'Algebra': 'dashboard.subjects.algebra',
+      'Geometry': 'dashboard.subjects.geometry',
+      'Calculus': 'dashboard.subjects.calculus',
+      'Biology': 'dashboard.subjects.biology',
+      'Chemistry': 'dashboard.subjects.chemistry',
+      'Physics': 'dashboard.subjects.physics',
+      'English Literature': 'dashboard.subjects.englishLiterature',
+      'World History': 'dashboard.subjects.worldHistory',
+      'Computer Science': 'dashboard.subjects.computerScience',
+    };
+    
+    return subjectKeyMap[studyStats.subjectName] || studyStats.subjectName;
+  };
+
+  const translatedSubjectName = getTranslatedSubjectName();
+  const subjectKey = translatedSubjectName.startsWith('dashboard.subjects.') ? translatedSubjectName : undefined;
+  const displaySubjectName = subjectKey ? t(subjectKey) : studyStats.subjectName;
+
   // Function to open AI Tutor
   const openAiTutor = () => {
     setIsSheetOpen(true);
@@ -43,7 +71,8 @@ const Dashboard = () => {
       {/* Header Section */}
       <DashboardHeader 
         selectedSubject={selectedSubject} 
-        subjectName={studyStats.subjectName}
+        subjectName={displaySubjectName}
+        subjectKey={subjectKey}
       />
       
       <div className="container mx-auto px-6 max-w-6xl pt-8">
@@ -57,7 +86,7 @@ const Dashboard = () => {
                     <Bot size={16} />
                     <span>{t('common.yourPersonalAiTutor')}</span>
                   </div>
-                  <h2 className="text-3xl font-bold">{t('dashboard.needHelp').replace('{{subject}}', studyStats.subjectName)}</h2>
+                  <h2 className="text-3xl font-bold">{t('dashboard.needHelp').replace('{{subject}}', displaySubjectName)}</h2>
                   <p className="text-lg opacity-90">
                     {t('dashboard.aiTutorDescription')}
                   </p>

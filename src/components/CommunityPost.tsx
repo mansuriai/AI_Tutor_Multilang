@@ -88,8 +88,19 @@ const CommunityPost = ({
     setShowReplyInput(false);
   };
 
-  // Format the date
-  const formattedDate = new Date(createdAt).toLocaleString('en-US', {
+  // Format the date based on current language
+  const getLocaleForLanguage = () => {
+    switch (t('common.languageCode')) {
+      case 'ar':
+        return 'ar-SA';
+      case 'id':
+        return 'id-ID';
+      default:
+        return 'en-US';
+    }
+  };
+
+  const formattedDate = new Date(createdAt).toLocaleString(getLocaleForLanguage(), {
     month: 'short',
     day: 'numeric',
     hour: 'numeric',
